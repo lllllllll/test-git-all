@@ -7,13 +7,10 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 @app.route('/detect_faces', methods=['POST'])
 def detect_faces():
-    # Get the image data from the request
     image_data = request.json['image']
 
-    # Decode the image data
     image_data = base64.b64decode(image_data)
 
-    # Convert the data to a numpy array
     image = np.frombuffer(image_data, dtype=np.uint8)
 
     # Convert the array to a image
