@@ -1,4 +1,3 @@
-# create api face detection with python
 from flask import Flask, request, jsonify
 import cv2
 import base64
